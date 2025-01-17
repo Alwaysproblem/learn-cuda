@@ -1,0 +1,12 @@
+*.pyc
+__pycache__
+logs
+.mypy_cache
+build
+*.whl
+.cache
+*.o
+*.a
+*.so
+*.dylib
+*.dll

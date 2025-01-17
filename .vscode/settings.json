@@ -1,0 +1,35 @@
+{
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "cmake.testEnvironment": {
+    // "LD_LIBRARY_PATH": "${workspaceFolder}/.vscode/vscode_build/:${workspaceFolder}/../unpacked/poplar/poplar-ubuntu_20_04-3.3.0+7726-8e07f7a105/lib:${env:LD_LIBRARY_PATH}",
+    // "POPLAR_LOG_LEVEL": "INFO",
+    // "MODEL_RUNTIME_LOG_LEVEL": "DEBUG"
+  },
+  "cmakeFormat.args": ["--config=${workspaceFolder}/.cmake-lint.yaml"],
+  "cmake.buildArgs": [],
+  "cmake.debugConfig": {
+    // "args": [
+    // ],
+    // "cwd": "${workspaceFolder}/src",
+  },
+  "cmake.buildDirectory": "${workspaceFolder}/build",
+  "cmake.configureArgs": [
+    // "-DCMAKE_C_COMPILER=clang",
+    // "-DCMAKE_CXX_COMPILER=clang++",
+    // "-DCMAKE_CUDA_COMPILER=/usr/local/cuda/bin/nvcc",
+  ],
+  // "cmake.cmakePath": "/usr/local/bin/cmake",
+  "C_Cpp.errorSquiggles": "enabled",
+  "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+  // "C_Cpp.clang_format_path": "clang-format",
+  "C_Cpp.clang_format_sortIncludes": true,
+  // "C_Cpp.clang_format_fallbackStyle": "Visual Studio",
+  "C_Cpp.codeAnalysis.clangTidy.enabled": true,
+  // "C_Cpp.codeAnalysis.clangTidy.path": "${env.HOME}/opt/anaconda3/envs/cpp-simplecode/bin/clang-tidy",
+  "C_Cpp.codeAnalysis.clangTidy.codeAction.formatFixes": true,
+  "C_Cpp.codeAnalysis.clangTidy.useBuildPath": true,
+  // "clangd.path": "clangd",
+  "clangd.arguments": ["--background-index"]
+  // "lldb-dap.executable-path": "/usr/bin/lldb-dap",
+}

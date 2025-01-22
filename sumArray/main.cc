@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
+#include <chrono>
+#include <iostream>
 #include "device.h"
 
 void printVector(float *vector, const int N) {
@@ -44,9 +45,17 @@ int main(int argc, char **argv) {
   initialData(h_A, nElem);
   initialData(h_B, nElem);
 
+  auto start = std::chrono::high_resolution_clock::now();
   sumArraysOnHost(h_A, h_B, h_C, nElem);
+  auto end = std::chrono::high_resolution_clock::now();
+  std::chrono::duration<double> elapsed = end - start;
+  std::cout << "Elapsed time on Host: " << elapsed.count() * 1000 << " ms\n";
 
+  auto start_gpu = std::chrono::high_resolution_clock::now();
   sumArrayOnGPU(h_A, h_B, h_C_gpu, nElem, grid_size, block_size);
+  auto end_gpu = std::chrono::high_resolution_clock::now();
+  std::chrono::duration<double> elapsed_gpu = end_gpu - start_gpu;
+  std::cout << "Elapsed time: " << elapsed_gpu.count() * 1000 << " ms\n";
 
   printVector(h_C, nElem);
   printf("\n");

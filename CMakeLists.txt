@@ -29,6 +29,7 @@ include_directories(include)
 add_subdirectory(hello)
 add_subdirectory(fatbinary)
 add_subdirectory(sumArray)
+add_subdirectory(sumMatrix)
 add_subdirectory(device_info)
 add_subdirectory(grid_and_block)
 

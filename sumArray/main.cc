@@ -34,6 +34,8 @@ int main(int argc, char **argv) {
   size_t nBytes = nElem * sizeof(float);
 
   float *h_A, *h_B, *h_C, *h_C_gpu;
+  const int grid_size = 10;
+  const int block_size = 256;
   h_A = (float *)malloc(nBytes);
   h_B = (float *)malloc(nBytes);
   h_C = (float *)malloc(nBytes);
@@ -44,7 +46,7 @@ int main(int argc, char **argv) {
 
   sumArraysOnHost(h_A, h_B, h_C, nElem);
 
-  sumArrayOnGPU(h_A, h_B, h_C_gpu, nElem);
+  sumArrayOnGPU(h_A, h_B, h_C_gpu, nElem, grid_size, block_size);
 
   printVector(h_C, nElem);
   printf("\n");

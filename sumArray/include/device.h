@@ -3,6 +3,7 @@
 #ifndef SUMARRAY_DEVICE_CUH
 #define SUMARRAY_DEVICE_CUH
 
-extern "C" void sumArrayOnGPU(float *A, float *B, float *C, const int N);
+extern "C" void sumArrayOnGPU(float *A, float *B, float *C, const int N,
+                              const int grid_size, const int block_size);
 
 #endif  // SUMARRAY_DEVICE_CUH

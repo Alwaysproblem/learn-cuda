@@ -16,5 +16,7 @@ int main(int argc, char **argv) {
   dim3 grid(2);
 
   checkIndex(grid, block);
+
+  cudaDeviceReset();
   return 0;
 }

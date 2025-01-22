@@ -57,5 +57,6 @@ int main(int argc, char **argv) {
   free(h_C);
   free(h_C_gpu);
 
+  cudaDeviceReset();
   return (0);
 }

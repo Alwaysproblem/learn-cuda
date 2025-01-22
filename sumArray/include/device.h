@@ -3,6 +3,8 @@
 #ifndef SUMARRAY_DEVICE_CUH
 #define SUMARRAY_DEVICE_CUH
 
+#include <cuda_runtime.h>
+
 extern "C" void sumArrayOnGPU(float *A, float *B, float *C, const int N,
                               const int grid_size, const int block_size);
 

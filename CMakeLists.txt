@@ -32,6 +32,7 @@ add_subdirectory(sumArray)
 add_subdirectory(sumMatrix)
 add_subdirectory(device_info)
 add_subdirectory(grid_and_block)
+add_subdirectory(warp_divergence)
 
 # -------------------------------------------------------------------#
 # Configuration summary

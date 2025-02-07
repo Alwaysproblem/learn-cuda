@@ -18,6 +18,17 @@ if(NOT DEFINED CMAKE_CUDA_ARCHITECTURES)
   set(CMAKE_CUDA_ARCHITECTURES 89)
 endif()
 
+# Add a target to generate cuda executable
+function(add_cuda_executable target)
+  add_executable(${target} ${ARGN})
+  target_link_libraries(${target} PRIVATE ${CUDA_LIBRARIES})
+  if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+    target_compile_options(${target} PRIVATE $<$<COMPILE_LANGUAGE:CUDA>:-G>)
+  endif()
+  target_compile_options(${target}
+                         PUBLIC $<$<COMPILE_LANGUAGE:CUDA>:-Xcompiler>)
+endfunction(add_cuda_executable target)
+
 # set(DCMAKE_EXE_LINKER_FLAGS "-fuse-ld=lld")
 
 # other third party libraries find_package(OpenMP) find_package(OpenGL)

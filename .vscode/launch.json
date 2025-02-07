@@ -2,16 +2,17 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "CUDA C++: Launch",
+      "type": "cuda-gdb",
+      "request": "launch",
+      "program": "${command:cmake.launchTargetPath}"
+    },
+    {
       "type": "lldb-dap",
       "request": "launch",
       "name": "lldb dap Launch",
       "program": "${command:cmake.launchTargetPath}",
-      "args": [
-        "--device=cuda",
-        "--module=tmp_gpu/mul.vmfs",
-        "--function=main",
-        "--input='2x2xf32=1.0 2.0 3.0 4.0'"
-      ],
+      "args": [],
       "env": [],
       "cwd": "${workspaceRoot}"
     },
